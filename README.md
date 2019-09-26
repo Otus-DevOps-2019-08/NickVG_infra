@@ -1,7 +1,7 @@
 # NickVG_infra
 NickVG Infra repository
 
-HM#2
+HW#2
 
 Создана папка(директория) play-travis(см слайды)
 
@@ -26,3 +26,18 @@ HM#2
 	travis login --com
 	Шифруем токен
 	travis encrypt "devops-team-otus:<ваш_токен>#<имя_канала>" --add notifications.slack.rooms --com
+
+HW#3
+	bastion_IP = 35.198.167.169
+	someinternalhost_IP = 10.156.0.3
+	
+	Создан проект Infra d GC
+	Создана машина Bastion с внешним IP, создана обычная VM someinternalhost.
+	Добавлены ключи SSH для доступа к машинам GC.
+	Настроен  SSH Forwarding на локальных Linux машинах.
+	Добавлен приватный ключ в ssh агент авторизации: ssh-add ~/.ssh/appuser
+	Полагаю, что для работы ssh someinternalhost, как вариант, необходимо настроить ~/.ssh/config 
+	Установлен и настроен pritunl
+	Настроено праивло в HC firewall
+	локально установил openvpn и графику к нему.
+	Для выпуска сертификатов требуется веб-адрес. Надо сделать позже.
