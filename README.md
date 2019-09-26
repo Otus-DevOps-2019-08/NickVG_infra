@@ -31,7 +31,7 @@ HW#3
 	bastion_IP = 35.210.63.41 
 	someinternalhost_IP = 10.132.0.5
 	
-	Создан проект Infra d GC
+	Создан проект Infra в GC
 	Создана машина Bastion с внешним IP, создана обычная VM someinternalhost.
 	Добавлены ключи SSH для доступа к машинам GC.
 	Настроен  SSH Forwarding на локальных Linux машинах.
