@@ -28,8 +28,8 @@ HW#2
 	travis encrypt "devops-team-otus:<ваш_токен>#<имя_канала>" --add notifications.slack.rooms --com
 
 HW#3
-	bastion_IP = 35.210.63.41 
-	someinternalhost_IP = 10.132.0.5
+bastion_IP = 35.210.63.41
+someinternalhost_IP = 10.132.0.5
 	
 	Создан проект Infra в GC
 	Создана машина Bastion с внешним IP, создана обычная VM someinternalhost.
@@ -40,4 +40,4 @@ HW#3
 	Установлен и настроен pritunl
 	Настроено праивло в HC firewall
 	локально установил openvpn и графику к нему.
-	Сертификат для для бастиона не выпустил
+	Сертификат для для бастиона не выпустил(бот сервиса ругается, что слишком много запросов на выпуск сертификата)
