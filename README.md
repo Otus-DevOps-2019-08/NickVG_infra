@@ -17,6 +17,7 @@ HW#2
 	скачан test.py(https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/test.py) в папку(директорию)  
 	play-travis  
 Настроена интеграция с Travis CI  
+
 	настройка производится через .travis.yml  
 	(содержимое смотреть в репозитории, получилось не с первого раза.Сначала привести файл в соответсвие со скрином из домашнего задания, page 42, потом зашифровать. Обговоренно далее)  
 	В слаке добавлена интеграция с TravisCI(предварительно проведена авторизация на сайте TravisCI)  
@@ -28,8 +29,8 @@ HW#2
 	travis encrypt "devops-team-otus:<ваш_токен>#<имя_канала>" --add notifications.slack.rooms --com  
   
 HW#3  
-bastion_IP = 35.210.63.41
-someinternalhost_IP = 10.132.0.5
+bastion_IP = 35.210.63.41  
+someinternalhost_IP = 10.132.0.5  
 	
 	Создан проект Infra в GC
 	Создана машина Bastion с внешним IP, создана обычная VM someinternalhost.
