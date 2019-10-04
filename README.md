@@ -53,6 +53,6 @@ HW#4
 	Настроено правило фаервола, см скрипт gcp_firewall.sh
 	Написан стартап скрипт: startup_script.sh
 	
-testapp_IP = 35.198.167.169
+testapp_IP = 35.210.156.46
 testapp_port = 9292
 
