@@ -1,28 +1,44 @@
 # NickVG_infra
 NickVG Infra repository
 
-HM#2
+HW#2
 
-Создана папка(директория) play-travis(см слайды)
+РЎРѕР·РґР°РЅР° РїР°РїРєР°(РґРёСЂРµРєС‚РѕСЂРёСЏ) play-travis(СЃРј СЃР»Р°Р№РґС‹)  
 
-Проведена настройка pull request tempaltes от github
-	mkdir .github
-	cd .github
-	wget https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/PULL_REQUEST_TEMPLATE.md
-	git add *
-	git commit -am 'Add PR template'
-	git push --set-upstream origin play-travis
-Настроена интеграция со Slack(общий случай: https://get.slack.help/hc/en-us/articles/232289568-GitHub-for-Slack)
-	/github subscribe Otus-DevOps-2019-08/<GITHUB_USER>_infra commits:all
-	скачан test.py(https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/test.py) в папку(директорию)
-	play-travis
-Настроена интеграция с Travis CI
-	настройка производится через .travis.yml
-	(содержимое смотреть в репозитории, получилось не с первого раза.Сначала привести файл в соответсвие со скрином из домашнего задания, page 42, потом зашифровать. Обговоренно далее)
-	В слаке добавлена интеграция с TravisCI(предварительно проведена авторизация на сайте TravisCI)
-	ставим руби
-	запускаем cli with ruby
-	gem install travis
-	travis login --com
-	Шифруем токен
-	travis encrypt "devops-team-otus:<ваш_токен>#<имя_канала>" --add notifications.slack.rooms --com
+РџСЂРѕРІРµРґРµРЅР° РЅР°СЃС‚СЂРѕР№РєР° pull request tempaltes РѕС‚ github  
+	mkdir .github  
+	cd .github  
+	wget https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/PULL_REQUEST_TEMPLATE.md  
+	git add *  
+	git commit -am 'Add PR template'  
+	git push --set-upstream origin play-travis  
+РќР°СЃС‚СЂРѕРµРЅР° РёРЅС‚РµРіСЂР°С†РёСЏ СЃРѕ Slack(РѕР±С‰РёР№ СЃР»СѓС‡Р°Р№: https://get.slack.help/hc/en-us/articles/232289568-GitHub-for-Slack)  
+	/github subscribe Otus-DevOps-2019-08/<GITHUB_USER>_infra commits:all  
+	СЃРєР°С‡Р°РЅ test.py(https://raw.githubusercontent.com/express42/otus-snippets/master/hw-04/test.py) РІ РїР°РїРєСѓ(РґРёСЂРµРєС‚РѕСЂРёСЋ)  
+	play-travis  
+РќР°СЃС‚СЂРѕРµРЅР° РёРЅС‚РµРіСЂР°С†РёСЏ СЃ Travis CI  
+
+	РЅР°СЃС‚СЂРѕР№РєР° РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ С‡РµСЂРµР· .travis.yml  
+	(СЃРѕРґРµСЂР¶РёРјРѕРµ СЃРјРѕС‚СЂРµС‚СЊ РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё, РїРѕР»СѓС‡РёР»РѕСЃСЊ РЅРµ СЃ РїРµСЂРІРѕРіРѕ СЂР°Р·Р°.РЎРЅР°С‡Р°Р»Р° РїСЂРёРІРµСЃС‚Рё С„Р°Р№Р» РІ СЃРѕРѕС‚РІРµС‚СЃРІРёРµ СЃРѕ СЃРєСЂРёРЅРѕРј РёР· РґРѕРјР°С€РЅРµРіРѕ Р·Р°РґР°РЅРёСЏ, page 42, РїРѕС‚РѕРј Р·Р°С€РёС„СЂРѕРІР°С‚СЊ. РћР±РіРѕРІРѕСЂРµРЅРЅРѕ РґР°Р»РµРµ)  
+	Р’ СЃР»Р°РєРµ РґРѕР±Р°РІР»РµРЅР° РёРЅС‚РµРіСЂР°С†РёСЏ СЃ TravisCI(РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ РїСЂРѕРІРµРґРµРЅР° Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РЅР° СЃР°Р№С‚Рµ TravisCI)  
+	СЃС‚Р°РІРёРј СЂСѓР±Рё  
+	Р·Р°РїСѓСЃРєР°РµРј cli with ruby  
+	gem install travis  
+	travis login --com  
+	РЁРёС„СЂСѓРµРј С‚РѕРєРµРЅ  
+	travis encrypt "devops-team-otus:<РІР°С€_С‚РѕРєРµРЅ>#<РёРјСЏ_РєР°РЅР°Р»Р°>" --add notifications.slack.rooms --com  
+  
+HW#3  
+```bastion_IP = 35.210.63.41```  
+```someinternalhost_IP = 10.132.0.5```  
+	
+	РЎРѕР·РґР°РЅ РїСЂРѕРµРєС‚ Infra РІ GC
+	РЎРѕР·РґР°РЅР° РјР°С€РёРЅР° Bastion СЃ РІРЅРµС€РЅРёРј IP, СЃРѕР·РґР°РЅР° РѕР±С‹С‡РЅР°СЏ VM someinternalhost.
+	Р”РѕР±Р°РІР»РµРЅС‹ РєР»СЋС‡Рё SSH РґР»СЏ РґРѕСЃС‚СѓРїР° Рє РјР°С€РёРЅР°Рј GC.
+	РќР°СЃС‚СЂРѕРµРЅ  SSH Forwarding РЅР° Р»РѕРєР°Р»СЊРЅС‹С… Linux РјР°С€РёРЅР°С….
+	Р”РѕР±Р°РІР»РµРЅ РїСЂРёРІР°С‚РЅС‹Р№ РєР»СЋС‡ РІ ssh Р°РіРµРЅС‚ Р°РІС‚РѕСЂРёР·Р°С†РёРё: ssh-add ~/.ssh/appuser
+	РџРѕР»Р°РіР°СЋ, С‡С‚Рѕ РґР»СЏ СЂР°Р±РѕС‚С‹ ssh someinternalhost, РєР°Рє РІР°СЂРёР°РЅС‚, РЅРµРѕР±С…РѕРґРёРјРѕ РЅР°СЃС‚СЂРѕРёС‚СЊ ~/.ssh/config 
+	РЈСЃС‚Р°РЅРѕРІР»РµРЅ Рё РЅР°СЃС‚СЂРѕРµРЅ pritunl
+	РќР°СЃС‚СЂРѕРµРЅРѕ РїСЂР°РёРІР»Рѕ РІ HC firewall
+	Р»РѕРєР°Р»СЊРЅРѕ СѓСЃС‚Р°РЅРѕРІРёР» openvpn Рё РіСЂР°С„РёРєСѓ Рє РЅРµРјСѓ.
+	РЎРµСЂС‚РёС„РёРєР°С‚ РґР»СЏ РґР»СЏ Р±Р°СЃС‚РёРѕРЅР° РЅРµ РІС‹РїСѓСЃС‚РёР»(Р±РѕС‚ СЃРµСЂРІРёСЃР° СЂСѓРіР°РµС‚СЃСЏ, С‡С‚Рѕ СЃР»РёС€РєРѕРј РјРЅРѕРіРѕ Р·Р°РїСЂРѕСЃРѕРІ РЅР° РІС‹РїСѓСЃРє СЃРµСЂС‚РёС„РёРєР°С‚Р°)
