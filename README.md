@@ -56,3 +56,9 @@ HW#4
 testapp_IP = 35.210.156.46
 testapp_port = 9292
 
+HW#5
+
+	Установлен packer.
+	Установлен google ADC.
+	Создан Packer template.
+	Написаны ubuntu15.json, variables.json, variables.json.example, .gitignorie
