@@ -1,0 +1,6 @@
+project         = "Project name"
+public_key_path = "path to public ssh key"
+disk_image      = "name of the disk image"
+zone        = "Zone name"
+user        = "username"
+private_key = "path to private key"
