@@ -64,6 +64,7 @@ HW#5
 	Написаны ubuntu15.json, variables.json, variables.json.example, .gitignorie
 
 HW#6
+
 	Установлен terraform
 	написаны конфигурационные файлы
 	С помощью тераформа развёрнут тестовый инстанс
