@@ -70,3 +70,8 @@ HW#6
 	С помощью тераформа развёрнут тестовый инстанс
 	Написаны main.tf, terraform.tfvars, terraform.tfvars.example, variables.tf
 
+
+HW#8
+	Установлены python2.7, ansible, pip
+	При выполнении playbook значение changed изменилось с 0 на 1. По всей видимости из-за того, что к хосту уже применялась playbook.
+	в конфигурационных файлах ДЗ все IP заменены на фэйковые.
