@@ -23,7 +23,20 @@ variable zone_name {
   # Описание переменной
   default = "europe-west1-b"
 }
+variable zone {
+  description = "Zone"
+  # Описание переменной
+  default = "europe-west1-b"
+}
 variable private_key {
   # Описание переменной
   description = "path to procate key"
+}
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable db_disk_image {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base"
 }

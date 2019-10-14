@@ -1,69 +1,28 @@
-terraform {
-  # Версия terraform
-  required_version = "~> 0.12.8"
-}
-
 provider "google" {
-  # Версия провайдера
-  version = "2.15"
-
-  # ID проекта
+  version = "~> 2.15"
   project = var.project
-
-  region = var.region
+  region  = var.region
 }
-resource "google_compute_instance" "app" {
-  name         = "reddit-app"
-  machine_type = "g1-small"
-  zone         = var.zone_name
-  tags         = ["reddit-app"]
 
-  # определение загрузочного диска
-  boot_disk {
-    initialize_params {
-      image = var.disk_image
-    }
-
-  }
-  # определение сетевого интерфейса
-  network_interface {
-    # сеть, к которой присоединить данный интерфейс
-    network = "default"
-    # использовать ephemeral IP для доступа из Интернет
-    access_config {}
-  }
-  connection {
-    type  = "ssh"
-    host  = self.network_interface[0].access_config[0].nat_ip
-    user  = var.user
-    agent = false
-    # путь до приватного ключа
-    private_key = file(var.private_key)
-  }
-
-  provisioner "file" {
-    source      = "files/puma.service"
-    destination = "/tmp/puma.service"
-  }
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
-  }
-  metadata = {
-    # путь до публичного ключа
-    ssh-keys = "${var.user}:${file(var.public_key_path)}"
-  }
+module "app" {
+  user            = var.user
+  source          = "./modules/app"
+  public_key_path = var.public_key_path
+  zone            = var.zone
+  app_disk_image  = var.app_disk_image
 }
-resource "google_compute_firewall" "firewall_puma" {
-  name = "allow-puma-default"
-  # Название сети, в которой действует правило
-  network = "default"
-  # Какой доступ разрешить
-  allow {
-    protocol = "tcp"
-    ports    = ["9292"]
-  }
-  # Каким адресам разрешаем доступ
-  source_ranges = ["0.0.0.0/0"]
-  # Правило применимо для инстансов с перечисленными тэгами
-  target_tags = ["reddit-app"]
+
+module "db" {
+  user            = var.user
+  source          = "./modules/db"
+  public_key_path = var.public_key_path
+  zone            = var.zone
+  db_disk_image   = var.db_disk_image
+}
+module "vpc" {
+  user   = var.user
+  source = "./modules/vpc"
+  #public_key_path = var.public_key_path
+  #  zone            = var.zone
+  #  db_disk_image   = var.db_disk_image
 }
