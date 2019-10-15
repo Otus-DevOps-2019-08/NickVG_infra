@@ -10,21 +10,19 @@ resource "google_compute_instance" "db" {
   }
   network_interface {
     network = "default"
-    #    access_config = {}
+    #access_config = {}
+    #      access_config = { nat_ip = google_compute_address.app_ip.addres }
   }
+  #  network_interface {
+  #    network = "default"
+  #    access_config {
+  #      nat_ip = google_compute_address.db_ip.address
+  #    }
+  #  }
   metadata = {
-    # путь до публичного ключа
     ssh-keys = "${var.user}:${file(var.public_key_path)}"
   }
 }
-# Правило firewall
-resource "google_compute_firewall" "firewall_mongo" {
-  name    = "allow-mongo-default"
-  network = "default"
-  allow {
-    protocol = "tcp"
-    ports    = ["27017"]
-  }
-  target_tags = ["reddit-db"]
-  source_tags = ["reddit-app"]
-}
+#resource "google_compute_address" "db_ip" {
+#  name = "reddit-db-ip"
+#}

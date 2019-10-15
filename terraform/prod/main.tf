@@ -6,7 +6,7 @@ provider "google" {
 
 module "app" {
   user            = var.user
-  source          = "./modules/app"
+  source          = "../modules/app"
   public_key_path = var.public_key_path
   zone            = var.zone
   app_disk_image  = var.app_disk_image
@@ -14,15 +14,12 @@ module "app" {
 
 module "db" {
   user            = var.user
-  source          = "./modules/db"
+  source          = "../modules/db"
   public_key_path = var.public_key_path
   zone            = var.zone
   db_disk_image   = var.db_disk_image
 }
 module "vpc" {
-  user   = var.user
-  source = "./modules/vpc"
-  #public_key_path = var.public_key_path
-  #  zone            = var.zone
-  #  db_disk_image   = var.db_disk_image
+  source        = "../modules/vpc"
+  source_ranges = ["${var.source_ranges}"]
 }

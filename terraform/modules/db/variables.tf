@@ -8,9 +8,9 @@ variable zone {
 
 variable db_disk_image {
   description = "Disk image for reddit db"
-  default     = "reddit-db-base"
+  default     = "reddit-db"
 }
 variable user {
-  # Описание переменной
+  #Описание переменной
   description = "default user nick"
 }

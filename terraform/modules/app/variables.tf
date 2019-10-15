@@ -11,6 +11,6 @@ variable app_disk_image {
   default     = "reddit-app-base"
 }
 variable user {
-  # Описание переменной
+  #Описание переменной
   description = "default user nick"
 }
