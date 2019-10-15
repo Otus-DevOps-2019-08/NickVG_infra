@@ -13,7 +13,7 @@
             "image_family": "reddit-db-base",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
-            "ssh_username": "appuser",
+            "ssh_username": "{{ user `ssh_username` }}",
             "machine_type": "{{user `machine_type` }}",
 	    "project_id":"{{ user `project_id` }}"
         }
