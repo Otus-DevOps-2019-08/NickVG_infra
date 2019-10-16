@@ -1,6 +1,6 @@
 {
-  "project_id": "infra-xxxxx",
-  "source_image_family": "ololo-base",
-  "machine_type": "x2larch"
+  "project_id": "infra-123456",
+  "source_image_family": "ubuntu-1604-lts",
+  "machine_type": "default"
 }
 
