@@ -12,13 +12,13 @@ resource "google_compute_instance" "db" {
     network = "default"
     #access_config = {}
     #      access_config = { nat_ip = google_compute_address.app_ip.addres }
+    #}
+    #  network_interface {
+    #    network = "default"
+    access_config {
+      #      nat_ip = google_compute_address.db_ip.address
+    }
   }
-  #  network_interface {
-  #    network = "default"
-  #    access_config {
-  #      nat_ip = google_compute_address.db_ip.address
-  #    }
-  #  }
   metadata = {
     ssh-keys = "${var.user}:${file(var.public_key_path)}"
   }
