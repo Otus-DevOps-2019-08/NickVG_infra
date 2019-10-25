@@ -1,9 +1,12 @@
-app:
-  hosts:
-    appserver:
-      ansible_host: 127.0.0.1
-db:
-  hosts:
-    dbserver:
-      ansible_host: 127.0.0.1 
+---
+all:                    # группа со всеми хостами
+  children:             # дочерние группы
+    app:                # группа app
+      hosts:            # хосты в группе app
+        appserver:      # хост appserver
+          ansible_host: 127.0.0.1  # переменная хоста
+    db:                 # группа db
+      hosts:            # группа db
+        dbserver:       # хост dbserver
+          ansible_host: 127.0.0.1 # переменная хоста
 
