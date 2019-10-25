@@ -1,9 +1,9 @@
 app:
   hosts:
     appserver:
-            ansible_host: "localhost" 
+            ansible_host: 127.0.0.1
 db:
   hosts:
     dbserver:
-      ansible_host: "localhost"
+      ansible_host: 127.0.0.1 
 

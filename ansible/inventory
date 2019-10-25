@@ -1,5 +1,5 @@
 [app]
-appserver ansible_host="localhost"
+appserver ansible_host=127.0.0.1
 [db]
-dbserver ansible_host="localhost"
+dbserver ansible_host=127.0.0.1
 
