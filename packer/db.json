@@ -13,17 +13,16 @@
             "image_family": "reddit-db-base",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
-            "ssh_username": "appuser",
+            "ssh_username": "nick",
             "machine_type": "{{user `machine_type` }}",
 	    "project_id":"{{ user `project_id` }}"
         }
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
-        }
+            "type": "ansible",
+            "playbook_file": "ansible/packer_db.yml"
+	}
     ]
 }
 
