@@ -97,3 +97,4 @@ HW#10
 	Отработана работа с Ansible Vault
 	Удалил inventory.yml
 
+HW#11
